@@ -174,6 +174,58 @@ public:
 		}
 		return false;
 	}
+	bool operator>=(Date& obj2)
+	{
+		if (year == obj2.year) {
+			if (month > obj2.month) {
+				return true;
+			}
+			else {
+				if (month == obj2.month) {
+					if (day >= obj2.day) {
+						return true;
+					}
+				}
+			}
+		}
+		else if (year > obj2.year) {
+			return true;
+		}
+		return false;
+	}
+	bool operator<=(Date& obj2)
+	{
+		if (year == obj2.year) {
+			if (month < obj2.month) {
+				return true;
+			}
+			else {
+				if (month == obj2.month) {
+					if (day <= obj2.day) {
+						return true;
+					}
+				}
+			}
+		}
+		else if (year < obj2.year) {
+			return true;
+		}
+		return false;
+	}
+	bool operator==(Date& obj2)
+	{
+		if (year == obj2.year && month == obj2.month && day == obj2.day) {
+			return true;
+		}
+		return false;
+	}
+	bool operator!=(Date& obj2)
+	{
+		if (year != obj2.year || month != obj2.month || day != obj2.day) {
+			return true;
+		}
+		return false;
+	}
 
 	//GETTERS
 	int getDay()const { return day; }
@@ -187,26 +239,26 @@ public:
 
 int main()
 {
-	Date d1(3, 3, 2026);
-	Date d2(2, 1, 2026);
-	Date d3(1, 1, 2026);
-	d1.print();
-	d2.print();
-	cout << "-- RES OF SUBTRACTION: " << d1 - d2 << endl << endl << endl; //ð³çíèööÿ â 61 äåíü (2 ì³ñÿö³ é 1 äåíü)
+	//Date d1(3, 3, 2026);
+	//Date d2(2, 1, 2026);
+	//Date d3(1, 1, 2026);
+	//d1.print();
+	//d2.print();
+	//cout << "-- RES OF SUBTRACTION: " << d1 - d2 << endl << endl << endl; //ð³çíèööÿ â 61 äåíü (2 ì³ñÿö³ é 1 äåíü)
 
-	d2.print();
-	d3.print();
-	cout << "-- RES OF SUBTRACTION: " << d2 - d3 << endl << endl << endl; //ð³çíèöÿ â 1 äåíü
+	//d2.print();
+	//d3.print();
+	//cout << "-- RES OF SUBTRACTION: " << d2 - d3 << endl << endl << endl; //ð³çíèöÿ â 1 äåíü
 
-	Date dRes = d3 + 3;
-	d3.print();
-	cout << "-- RES OF + 3:\n";
-	dRes.print(); //Day: 1 + 3 = 4
-	cout << "-- RES OF ANOTHER + 31:\n";
-	dRes = dRes + 31;
-	dRes.print(); //Month: 1 + 1 = 2; Day: 4 + 1 = 5
-	cout << "-- RES OF ANOTHER + 391:\n";
-	dRes = dRes + 391;
-	dRes.print(); //Year: 2026 + 1 = 2027; Month: 2 + 1 = 3; Day: 5 + 1 = 6;
+	//Date dRes = d3 + 3;
+	//d3.print();
+	//cout << "-- RES OF + 3:\n";
+	//dRes.print(); //Day: 1 + 3 = 4
+	//cout << "-- RES OF ANOTHER + 31:\n";
+	//dRes = dRes + 31;
+	//dRes.print(); //Month: 1 + 1 = 2; Day: 4 + 1 = 5
+	//cout << "-- RES OF ANOTHER + 391:\n";
+	//dRes = dRes + 391;
+	//dRes.print(); //Year: 2026 + 1 = 2027; Month: 2 + 1 = 3; Day: 5 + 1 = 6;
 	return 0;
 }
