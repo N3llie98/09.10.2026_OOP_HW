@@ -46,7 +46,7 @@ public:
 		}
 	}
 	//Date - кількість днів = ... (новий Date)
-	Date operator+(int d) {
+	Date operator-(int d) {
 		if (d < day) {
 			return Date(day - d, month, year);
 		}
@@ -67,7 +67,7 @@ public:
 	//ПЕРЕГРУЗКИ СКОРОЧЕНИХ ФОРМ
 	
 	//Date += кількість днів = ... (змінити даний Date)
-	Date operator+(int d) {
+	Date operator+=(int d) {
 		if (d < 30) {
 			day += d;
 			return *this;
@@ -91,7 +91,7 @@ public:
 		}
 	}
 	//Date -= кількість днів = ... (змінити даний Date)
-	Date operator+(int d) {
+	Date operator-=(int d) {
 		if (d < day) {
 			day -= d;
 			return *this;
